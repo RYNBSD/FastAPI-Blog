@@ -5,7 +5,7 @@ from fastapi.middleware.httpsredirect import HTTPSRedirectMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 from time import time
 from .src.router import auth, user, blog
-from .src.util import cookie, session
+from .src.lib.middleware import cookie, session
 
 app = FastAPI()
 
