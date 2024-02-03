@@ -3,8 +3,7 @@ from json import dumps, loads
 
 
 class Session:
-    def __init__(self, secret: str, cookie_name: str):
-        self.secret = secret
+    def __init__(self, cookie_name: str):
         self.cookie_name = cookie_name
 
     async def middleware(self, req: Request, next):
@@ -21,6 +20,6 @@ class Session:
         res: Response = await next(req)
 
         res.set_cookie(self.cookie_name, dumps(req.session), path="/",
-                       httponly=False, secure=False, samesite="strict", max_age=0)
+                        httponly=False, secure=False, samesite="strict", max_age=0)
 
         return res
