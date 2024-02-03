@@ -4,8 +4,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.httpsredirect import HTTPSRedirectMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 from time import time
-from src.router import auth, user, blog
-from src.lib.middleware import cookie, session
+from router import auth, user, blog
+from lib.middleware import cookie, session
 
 app = FastAPI()
 
